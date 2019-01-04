@@ -7,9 +7,7 @@
         ]).
 
 -spec zip_uneven_lists(list(), list()) -> list().
-zip_uneven_lists(L1, L2) when length(L1) =:= length(L2) -> lists:zip(L1, L2);
-zip_uneven_lists(L1, L2) when length(L1) > length(L2)   -> zip_with_default(L1, L2, null);
-zip_uneven_lists(L1, L2) when length(L1) < length(L2)   -> zip_with_default(L2, L1, null).
+zip_uneven_lists(L1, L2) -> zip_uneven_lists(L1, L2, undefined).
 
 -spec zip_uneven_lists(list(), list(), any()) -> list().
 zip_uneven_lists(L1, L2, _Default) when length(L1) =:= length(L2) -> lists:zip(L1, L2);
@@ -24,8 +22,7 @@ zip_with_default(Longer, Shorter, Default) ->
   lists:zip(Longer, ExpandedShorter).
 
 -spec zip_uneven_lists_stable(list(), list()) -> list().
-zip_uneven_lists_stable(L1, L2) when length(L1) =:= length(L2) -> lists:zip(L1, L2);
-zip_uneven_lists_stable(L1, L2)                                -> zip_with_default_stable(L1, L2, null).
+zip_uneven_lists_stable(L1, L2) -> zip_uneven_lists_stable(L1, L2, undefined).
 
 -spec zip_uneven_lists_stable(list(), list(), any()) -> list().
 zip_uneven_lists_stable(L1, L2, _Default) when length(L1) =:= length(L2) -> lists:zip(L1, L2);
