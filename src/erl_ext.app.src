@@ -1,0 +1,13 @@
+{application, erl_ext, [
+  {description, "Extensions for ERTS, OTP and Erlang's standard library."},
+  {vsn, "git"},
+  {applications, [
+    kernel,
+    stdlib
+  ]},
+  {env, [
+  ]},
+  {modules, [
+    lists_ext
+  ]}
+]}.
