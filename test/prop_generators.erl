@@ -5,7 +5,8 @@
 -export([ two_lists_with_equal_length/1,
           two_non_empty_lists_with_unequal_length/1,
           two_non_empty_lists_with_first_longer/1,
-          two_non_empty_lists_with_second_longer/1
+          two_non_empty_lists_with_second_longer/1,
+          string_containing_only_control_codes/0
         ]).
 
 -define(MAX_RANGE, 1000).
@@ -31,3 +32,8 @@ two_non_empty_lists_with_first_longer(Type) ->
 two_non_empty_lists_with_second_longer(Type) ->
   {SizeA, SizeB} = ?SUCHTHAT({Size1, Size2}, {choose(1, ?MAX_RANGE), choose(1, ?MAX_RANGE)}, Size1 < Size2),
   two_lists_up_to(SizeA, SizeB, Type).
+
+string_containing_only_control_codes() ->
+  list(frequency([{90, range(0, 31)},
+                  {10, 127}
+                 ])).
