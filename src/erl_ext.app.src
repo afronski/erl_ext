@@ -8,6 +8,7 @@
   {env, [
   ]},
   {modules, [
+    io_lib_ext,
     lists_ext
   ]}
 ]}.
