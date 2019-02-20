@@ -24,7 +24,6 @@ Gaqft+yVnHxUtcOFFQ4TLEFWX6O/ZAUxD5fzHW+u/S9Q2q0deIeG6ZJKOkRw/HbZ
 FKAmO4djs2WorD1+WwbwZaXghqhudHpf6aDwMIvCag==
 -----END CERTIFICATE REQUEST-----">>).
 
-
 -export([ all/0 ]).
 -export([ happy_path_for_CSR_parsing/1,
           verify_that_CN_is_extracted_properly/1 ]).
