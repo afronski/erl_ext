@@ -20,6 +20,7 @@ $ rebar3 compile
 
 ```bash
 $ rebar3 dialyzer
+$ rebar3 ct
 $ rebar3 proper
 ```
 
