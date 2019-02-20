@@ -5,8 +5,10 @@
 
 -include_lib("public_key/include/public_key.hrl").
 
--spec parse_csr_in_pem_format(CSR_PEM :: binary()) -> #'CertificationRequest'{}.
-parse_csr_in_pem_format(CSR_PEM) ->
+-spec parse_csr_in_pem_format(CSR_PEM :: list() | binary()) -> #'CertificationRequest'{}.
+parse_csr_in_pem_format(CSR_PEM) when is_list(CSR_PEM) ->
+  parse_csr_in_pem_format(list_to_binary(CSR_PEM));
+parse_csr_in_pem_format(CSR_PEM) when is_binary(CSR_PEM) ->
   [{'CertificationRequest', CSR_DER, _}] = public_key:pem_decode(CSR_PEM),
   public_key:der_decode('CertificationRequest', CSR_DER).
 
