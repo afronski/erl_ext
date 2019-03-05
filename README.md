@@ -5,6 +5,7 @@
 Set of extensions for *Erlang's* Standard Library, *OTP* and *ERTS* that we use on a daily basis:
 
 - `io_lib_ext`
+- `ets_ext`
 - `lists_ext`
 - `public_key_ext`
 
